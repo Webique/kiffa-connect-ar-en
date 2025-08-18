@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Kiffa Contracting Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
+    /* Kiffa Corporate Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 237 58% 14%;
+    
+    /* Navy Brand Colors */
+    --navy: 237 58% 14%;
+    --navy-light: 237 45% 25%;
+    --navy-dark: 237 70% 8%;
+    
+    /* Gold Brand Colors */
+    --gold: 42 100% 50%;
+    --gold-light: 42 100% 65%;
+    --gold-dark: 42 100% 35%;
+    
+    /* System Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 237 58% 14%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --popover-foreground: 237 58% 14%;
+    
+    --primary: 237 58% 14%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 42 100% 50%;
+    --secondary-foreground: 237 58% 14%;
+    
+    --muted: 220 13% 96%;
+    --muted-foreground: 237 20% 45%;
+    
+    --accent: 42 100% 50%;
+    --accent-foreground: 237 58% 14%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 42 100% 50%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom gradients */
+    --gradient-navy: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--navy-light)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-light)) 50%, hsl(var(--gold)) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 12px hsl(var(--navy) / 0.1);
+    --shadow-medium: 0 8px 32px hsl(var(--navy) / 0.15);
+    --shadow-strong: 0 16px 64px hsl(var(--navy) / 0.2);
+    --shadow-gold: 0 8px 32px hsl(var(--gold) / 0.25);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +123,172 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+  
+  /* RTL Support */
+  .rtl {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  .ltr {
+    direction: ltr;
+    text-align: left;
+  }
+  
+  /* Arabic Font */
+  .font-arabic {
+    font-family: 'Noto Sans Arabic', Arial, sans-serif;
+  }
+  
+  /* English Font */
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Corporate Button Variants */
+  .btn-corporate {
+    @apply bg-gradient-to-r from-navy to-navy-light text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-medium hover:-translate-y-0.5;
+  }
+  
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold to-gold-light text-navy px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-gold hover:-translate-y-0.5;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-gold text-gold px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-gold hover:text-navy hover:shadow-gold hover:-translate-y-0.5;
+  }
+  
+  /* Gradient Backgrounds */
+  .bg-gradient-navy {
+    background: var(--gradient-navy);
+  }
+  
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  /* Corporate Shadows */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  /* Section Spacings */
+  .section-padding {
+    @apply py-20 px-4 lg:px-8;
+  }
+  
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--gold) / 0.5);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(var(--gold) / 0.8);
   }
 }
