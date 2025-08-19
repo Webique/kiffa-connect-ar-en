@@ -49,12 +49,12 @@ const Team = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className={`text-5xl font-black text-navy mb-6 animate-fade-in-up ${
-            language === 'ar' ? 'font-arabic' : 'font-inter'
+            language === 'ar' ? 'font-cairo font-black' : 'font-inter'
           }`}>
             {t('team_title')}
           </h2>
           <p className={`text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed animate-fade-in-up ${
-            language === 'ar' ? 'font-arabic' : 'font-inter'
+            language === 'ar' ? 'font-cairo font-medium' : 'font-inter'
           }`} style={{ animationDelay: '0.2s' }}>
             {t('team_stats')}
           </p>
@@ -75,12 +75,12 @@ const Team = () => {
                 </div>
                 <div className="text-3xl font-black text-navy mb-2">{category.count}</div>
                 <h3 className={`text-lg font-bold text-navy mb-2 ${
-                  language === 'ar' ? 'font-arabic' : 'font-inter'
+                  language === 'ar' ? 'font-cairo font-bold' : 'font-inter'
                 }`}>
                   {category.title}
                 </h3>
                 <p className={`text-sm text-gray-600 ${
-                  language === 'ar' ? 'font-arabic' : 'font-inter'
+                  language === 'ar' ? 'font-cairo font-medium' : 'font-inter'
                 }`}>
                   {category.description}
                 </p>
@@ -92,7 +92,7 @@ const Team = () => {
         {/* Skills & Performance */}
         <div className="bg-gradient-navy rounded-3xl p-12">
           <h3 className={`text-3xl font-bold text-white text-center mb-12 ${
-            language === 'ar' ? 'font-arabic' : 'font-inter'
+            language === 'ar' ? 'font-cairo font-bold' : 'font-inter'
           }`}>
             {language === 'ar' ? 'مؤشرات الأداء' : 'Performance Metrics'}
           </h3>
@@ -108,7 +108,7 @@ const Team = () => {
                   dir === 'rtl' ? 'flex-row-reverse' : ''
                 }`}>
                   <span className={`text-white font-medium ${
-                    language === 'ar' ? 'font-arabic' : 'font-inter'
+                    language === 'ar' ? 'font-cairo font-medium' : 'font-inter'
                   }`}>
                     {skill.name}
                   </span>

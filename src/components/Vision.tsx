@@ -15,14 +15,14 @@ const Vision = () => {
               <div className="w-16 h-16 bg-gold rounded-2xl flex items-center justify-center animate-scale-in">
                 <Eye className="text-navy" size={32} />
               </div>
-              <h2 className={`text-4xl font-black text-white ${
-                language === 'ar' ? 'font-arabic' : 'font-inter'
+              <h2 className={`text-4xl font-black text-white text-center lg:text-left ${
+                language === 'ar' ? 'font-cairo font-black' : 'font-inter'
               }`}>
                 {t('vision_title')}
               </h2>
             </div>
             <p className={`text-lg text-white/90 leading-relaxed animate-fade-in-up ${
-              language === 'ar' ? 'font-arabic' : 'font-inter'
+              language === 'ar' ? 'font-cairo font-medium' : 'font-inter'
             }`} style={{ animationDelay: '0.2s' }}>
               {t('vision_content')}
             </p>
@@ -34,14 +34,14 @@ const Vision = () => {
               <div className="w-16 h-16 bg-gold rounded-2xl flex items-center justify-center animate-scale-in" style={{ animationDelay: '0.3s' }}>
                 <Target className="text-navy" size={32} />
               </div>
-              <h2 className={`text-4xl font-black text-white ${
-                language === 'ar' ? 'font-arabic' : 'font-inter'
+              <h2 className={`text-4xl font-black text-white text-center lg:text-left ${
+                language === 'ar' ? 'font-cairo font-black' : 'font-inter'
               }`}>
                 {t('mission_title')}
               </h2>
             </div>
             <p className={`text-lg text-white/90 leading-relaxed animate-fade-in-up ${
-              language === 'ar' ? 'font-arabic' : 'font-inter'
+              language === 'ar' ? 'font-cairo font-medium' : 'font-inter'
             }`} style={{ animationDelay: '0.5s' }}>
               {t('mission_content')}
             </p>
@@ -62,7 +62,7 @@ const Vision = () => {
             >
               <div className="text-5xl mb-4">{value.icon}</div>
               <h3 className={`text-xl font-bold text-gold ${
-                language === 'ar' ? 'font-arabic' : 'font-inter'
+                language === 'ar' ? 'font-cairo font-bold' : 'font-inter'
               }`}>
                 {value.title}
               </h3>

@@ -38,7 +38,7 @@ const Contact = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className={`text-5xl font-black text-navy mb-6 animate-fade-in-up ${
-            language === 'ar' ? 'font-arabic' : 'font-inter'
+            language === 'ar' ? 'font-cairo font-black' : 'font-inter'
           }`}>
             {t('contact_title')}
           </h2>
@@ -51,7 +51,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div className="animate-fade-in-left">
               <h3 className={`text-3xl font-bold text-navy mb-8 ${
-                language === 'ar' ? 'font-arabic' : 'font-inter'
+                language === 'ar' ? 'font-cairo font-bold' : 'font-inter'
               }`}>
                 {language === 'ar' ? 'معلومات التواصل' : 'Contact Information'}
               </h3>
@@ -70,12 +70,12 @@ const Contact = () => {
                       </div>
                       <div>
                         <div className={`text-sm text-gray-500 font-medium ${
-                          language === 'ar' ? 'font-arabic' : 'font-inter'
+                          language === 'ar' ? 'font-cairo font-medium' : 'font-inter'
                         }`}>
                           {info.label}
                         </div>
                         <div className={`text-navy font-semibold ${
-                          language === 'ar' ? 'font-arabic' : 'font-inter'
+                          language === 'ar' ? 'font-cairo font-semibold' : 'font-inter'
                         }`}>
                           {info.value}
                         </div>
@@ -89,7 +89,7 @@ const Contact = () => {
             {/* Social Links */}
             <div className="animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
               <h4 className={`text-xl font-bold text-navy mb-4 ${
-                language === 'ar' ? 'font-arabic' : 'font-inter'
+                language === 'ar' ? 'font-cairo font-bold' : 'font-inter'
               }`}>
                 {language === 'ar' ? 'تابعنا على' : 'Follow Us'}
               </h4>

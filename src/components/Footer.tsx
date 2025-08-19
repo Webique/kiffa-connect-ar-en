@@ -15,7 +15,7 @@ const Footer = () => {
               alt="Kiffa Logo" 
               className="h-12 w-auto animate-glow"
             />
-            <div className={`${language === 'ar' ? 'font-arabic' : 'font-inter'}`}>
+            <div className={`${language === 'ar' ? 'font-cairo' : 'font-inter'}`}>
               <div className="text-white font-bold text-lg">
                 {t('company_name')}
               </div>
@@ -27,7 +27,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className={`text-white/80 text-center ${
-            language === 'ar' ? 'font-arabic' : 'font-inter'
+            language === 'ar' ? 'font-cairo' : 'font-inter'
           }`}>
             {t('footer_text')}
           </div>
@@ -61,7 +61,7 @@ const Footer = () => {
         {/* Bottom Border */}
         <div className="mt-8 pt-8 border-t border-white/10 text-center">
           <div className={`text-white/60 text-sm ${
-            language === 'ar' ? 'font-arabic' : 'font-inter'
+            language === 'ar' ? 'font-cairo' : 'font-inter'
           }`}>
             {language === 'ar' ? 'تم التطوير بأحدث التقنيات' : 'Built with Latest Technologies'} 
             <span className="text-gold mx-2">•</span>

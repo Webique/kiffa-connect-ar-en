@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import clientsImage from '@/assets/clients.png';
 
 const Clients = () => {
   const { language, t, dir } = useLanguage();
@@ -25,7 +26,7 @@ const Clients = () => {
         <div className="flex justify-center mb-16">
           <div className="max-w-6xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <img 
-              src="/clients.png" 
+              src={clientsImage}
               alt={language === 'ar' ? 'عملاؤنا وشركاؤنا' : 'Our Clients and Partners'}
               className="w-full h-auto rounded-2xl shadow-2xl"
             />

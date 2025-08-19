@@ -37,7 +37,7 @@ const Hero = () => {
 
           {/* Company Name */}
           <h1 className={`text-4xl md:text-6xl lg:text-8xl font-black mb-6 animate-fade-in-up ${
-            language === 'ar' ? 'font-arabic' : 'font-inter'
+            language === 'ar' ? 'font-cairo font-black' : 'font-inter'
           }`} style={{ animationDelay: '0.2s' }}>
             <span className="text-white">
               {t('company_name')}
@@ -46,7 +46,7 @@ const Hero = () => {
 
           {/* Tagline */}
           <p className={`text-2xl lg:text-3xl text-gold font-semibold mb-12 animate-fade-in-up ${
-            language === 'ar' ? 'font-arabic' : 'font-inter'
+            language === 'ar' ? 'font-cairo font-semibold' : 'font-inter'
           }`} style={{ animationDelay: '0.4s' }}>
             {t('tagline')}
           </p>

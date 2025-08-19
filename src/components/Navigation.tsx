@@ -29,7 +29,7 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-md shadow-medium ${dir}`}>
-      <div className="container-custom">
+      <div className="container-custom px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className={`flex items-center ${dir === 'rtl' ? 'space-x-reverse space-x-3' : 'space-x-3'}`}>
@@ -47,7 +47,7 @@ const Navigation = () => {
                 key={item.key}
                 onClick={() => scrollToSection(item.href)}
                 className={`text-white hover:text-gold transition-colors duration-300 font-medium ${
-                  language === 'ar' ? 'font-arabic' : 'font-inter'
+                  language === 'ar' ? 'font-cairo font-medium' : 'font-inter'
                 }`}
               >
                 {t(item.key)}
@@ -98,7 +98,7 @@ const Navigation = () => {
                 key={item.key}
                 onClick={() => scrollToSection(item.href)}
                 className={`block w-full text-left py-3 text-white hover:text-gold transition-colors duration-300 font-medium border-b border-white/10 last:border-b-0 ${
-                  language === 'ar' ? 'font-arabic text-right' : 'font-inter'
+                  language === 'ar' ? 'font-cairo text-right' : 'font-inter'
                 }`}
               >
                 {t(item.key)}

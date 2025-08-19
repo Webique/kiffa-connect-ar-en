@@ -13,13 +13,13 @@ const About = () => {
         }`}>
           {/* Text Content */}
           <div className={`space-y-6 ${dir === 'rtl' ? 'lg:order-2' : ''}`}>
-            <h2 className={`text-5xl font-black text-navy mb-8 animate-fade-in-up ${
-              language === 'ar' ? 'font-arabic' : 'font-inter'
+            <h2 className={`text-5xl font-black text-navy mb-8 animate-fade-in-up text-center ${
+              language === 'ar' ? 'font-cairo font-black' : 'font-inter'
             }`}>
               {t('about_title')}
             </h2>
             <p className={`text-lg text-gray-700 leading-relaxed animate-fade-in-up ${
-              language === 'ar' ? 'font-arabic' : 'font-inter'
+              language === 'ar' ? 'font-cairo font-medium' : 'font-inter'
             }`} style={{ animationDelay: '0.2s' }}>
               {t('about_content')}
             </p>
@@ -28,13 +28,13 @@ const About = () => {
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="text-center p-6 bg-gradient-navy rounded-2xl shadow-medium animate-scale-in" style={{ animationDelay: '0.4s' }}>
                 <div className="text-3xl font-black text-gold mb-2">15+</div>
-                <div className={`text-white font-medium ${language === 'ar' ? 'font-arabic' : 'font-inter'}`}>
+                <div className={`text-white font-medium ${language === 'ar' ? 'font-cairo font-medium' : 'font-inter'}`}>
                   {language === 'ar' ? 'سنة خبرة' : 'Years Experience'}
                 </div>
               </div>
               <div className="text-center p-6 bg-gradient-gold rounded-2xl shadow-gold animate-scale-in" style={{ animationDelay: '0.6s' }}>
                 <div className="text-3xl font-black text-navy mb-2">100+</div>
-                <div className={`text-navy font-medium ${language === 'ar' ? 'font-arabic' : 'font-inter'}`}>
+                <div className={`text-navy font-medium ${language === 'ar' ? 'font-cairo font-medium' : 'font-inter'}`}>
                   {language === 'ar' ? 'مشروع منجز' : 'Projects Completed'}
                 </div>
               </div>

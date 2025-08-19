@@ -39,7 +39,7 @@ const Projects = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className={`text-5xl font-black text-navy mb-6 animate-fade-in-up ${
-            language === 'ar' ? 'font-arabic' : 'font-inter'
+            language === 'ar' ? 'font-cairo font-black' : 'font-inter'
           }`}>
             {t('projects_title')}
           </h2>
@@ -58,12 +58,12 @@ const Projects = () => {
               }`}>
                 <div className="flex-1">
                   <h3 className={`text-xl font-bold text-navy mb-2 ${
-                    language === 'ar' ? 'font-arabic' : 'font-inter'
+                    language === 'ar' ? 'font-cairo font-bold' : 'font-inter'
                   }`}>
                     {project.title}
                   </h3>
                   <span className={`inline-block bg-gold/20 text-gold px-3 py-1 rounded-lg text-sm font-medium ${
-                    language === 'ar' ? 'font-arabic' : 'font-inter'
+                    language === 'ar' ? 'font-cairo font-medium' : 'font-inter'
                   }`}>
                     {project.category}
                   </span>
@@ -71,7 +71,7 @@ const Projects = () => {
                 <div className="flex items-center gap-2">
                   <CheckCircle className="text-green-500" size={20} />
                   <span className={`text-green-600 font-medium ${
-                    language === 'ar' ? 'font-arabic' : 'font-inter'
+                    language === 'ar' ? 'font-cairo font-medium' : 'font-inter'
                   }`}>
                     {project.status}
                   </span>
@@ -96,7 +96,7 @@ const Projects = () => {
             >
               <div className="text-4xl font-black text-gold mb-2">{stat.number}</div>
               <div className={`text-white font-medium ${
-                language === 'ar' ? 'font-arabic' : 'font-inter'
+                language === 'ar' ? 'font-cairo' : 'font-inter'
               }`}>
                 {stat.label}
               </div>
