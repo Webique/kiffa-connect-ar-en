@@ -1,37 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { Mail, Phone, Globe, MapPin, MessageSquare } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
   const { language, t, dir } = useLanguage();
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: language === 'ar' ? 'تم إرسال رسالتك بنجاح' : 'Message sent successfully',
-      description: language === 'ar' ? 'سنتواصل معك قريباً' : 'We will contact you soon',
-    });
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
 
   const contactInfo = [
     {
@@ -72,11 +44,11 @@ const Contact = () => {
           </h2>
         </div>
 
-        <div className={`grid lg:grid-cols-2 gap-16 ${
-          dir === 'rtl' ? 'lg:grid-cols-2' : ''
+        <div className={`grid lg:grid-cols-1 gap-16 ${
+          dir === 'rtl' ? 'lg:grid-cols-1' : ''
         }`}>
           {/* Contact Information */}
-          <div className={`space-y-8 ${dir === 'rtl' ? 'lg:order-2' : ''}`}>
+          <div className="space-y-8">
             <div className="animate-fade-in-left">
               <h3 className={`text-3xl font-bold text-navy mb-8 ${
                 language === 'ar' ? 'font-arabic' : 'font-inter'
@@ -130,95 +102,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className={`${dir === 'rtl' ? 'lg:order-1' : ''}`}>
-            <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in-right">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <Label htmlFor="name" className={`text-navy font-medium ${
-                    language === 'ar' ? 'font-arabic' : 'font-inter'
-                  }`}>
-                    {t('name')}
-                  </Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className={`mt-2 ${dir === 'rtl' ? 'text-right' : ''} ${
-                      language === 'ar' ? 'font-arabic' : 'font-inter'
-                    }`}
-                    required
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="email" className={`text-navy font-medium ${
-                    language === 'ar' ? 'font-arabic' : 'font-inter'
-                  }`}>
-                    {t('email')}
-                  </Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={`mt-2 ${dir === 'rtl' ? 'text-right' : ''} ${
-                      language === 'ar' ? 'font-arabic' : 'font-inter'
-                    }`}
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <Label htmlFor="phone" className={`text-navy font-medium ${
-                  language === 'ar' ? 'font-arabic' : 'font-inter'
-                }`}>
-                  {t('phone_field')}
-                </Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className={`mt-2 ${dir === 'rtl' ? 'text-right' : ''} ${
-                    language === 'ar' ? 'font-arabic' : 'font-inter'
-                  }`}
-                  required
-                />
-              </div>
-              
-              <div>
-                <Label htmlFor="message" className={`text-navy font-medium ${
-                  language === 'ar' ? 'font-arabic' : 'font-inter'
-                }`}>
-                  {t('message')}
-                </Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={6}
-                  className={`mt-2 resize-none ${dir === 'rtl' ? 'text-right' : ''} ${
-                    language === 'ar' ? 'font-arabic' : 'font-inter'
-                  }`}
-                  required
-                />
-              </div>
-              
-              <Button
-                type="submit"
-                className={`w-full btn-gold text-lg py-4 ${
-                  language === 'ar' ? 'font-arabic' : 'font-inter'
-                }`}
-              >
-                {t('send_message')}
-              </Button>
-            </form>
           </div>
         </div>
       </div>

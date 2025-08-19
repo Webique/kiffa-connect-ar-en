@@ -20,7 +20,9 @@ export default {
 		extend: {
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],
-				arabic: ['Noto Sans Arabic', 'Arial', 'sans-serif'],
+				arabic: ['Noto Sans Arabic', 'Cairo', 'IBM Plex Sans Arabic', 'Arial', 'sans-serif'],
+				cairo: ['Cairo', 'Noto Sans Arabic', 'Arial', 'sans-serif'],
+				ibmPlex: ['IBM Plex Sans Arabic', 'Noto Sans Arabic', 'Arial', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

@@ -29,14 +29,14 @@ const Hero = () => {
           {/* Logo */}
           <div className="mb-8 animate-fade-in-up">
             <img 
-              src="/lovable-uploads/b5262de7-af56-427e-a8e2-545fcff46225.png" 
+              src="/favicon.png" 
               alt="Kiffa Logo" 
-              className="h-24 w-auto mx-auto mb-6 animate-glow"
+              className="h-20 w-auto animate-glow mb-8 mx-auto"
             />
           </div>
 
           {/* Company Name */}
-          <h1 className={`text-6xl lg:text-8xl font-black mb-6 animate-fade-in-up ${
+          <h1 className={`text-4xl md:text-6xl lg:text-8xl font-black mb-6 animate-fade-in-up ${
             language === 'ar' ? 'font-arabic' : 'font-inter'
           }`} style={{ animationDelay: '0.2s' }}>
             <span className="text-white">

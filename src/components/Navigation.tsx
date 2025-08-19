@@ -32,21 +32,16 @@ const Navigation = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <div className={`flex items-center ${dir === 'rtl' ? 'space-x-reverse space-x-3' : 'space-x-3'}`}>
             <img 
-              src="/lovable-uploads/b5262de7-af56-427e-a8e2-545fcff46225.png" 
+              src="/favicon.png" 
               alt="Kiffa Logo" 
               className="h-12 w-auto animate-glow"
             />
-            <div className={`${language === 'ar' ? 'font-arabic' : 'font-inter'}`}>
-              <div className="text-white font-bold text-lg leading-tight">
-                {t('company_name')}
-              </div>
-            </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className={`hidden lg:flex items-center ${dir === 'rtl' ? 'space-x-reverse space-x-8' : 'space-x-8'}`}>
             {navItems.map((item) => (
               <button
                 key={item.key}
@@ -61,7 +56,7 @@ const Navigation = () => {
           </div>
 
           {/* Language Switcher & Mobile Menu */}
-          <div className="flex items-center space-x-4">
+          <div className={`flex items-center ${dir === 'rtl' ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
             <div className="flex bg-white/10 rounded-lg p-1">
               <button
                 onClick={() => setLanguage('en')}

@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Logo and Company */}
           <div className="flex items-center gap-4">
             <img 
-              src="/lovable-uploads/b5262de7-af56-427e-a8e2-545fcff46225.png" 
+              src="/favicon.png" 
               alt="Kiffa Logo" 
               className="h-12 w-auto animate-glow"
             />
